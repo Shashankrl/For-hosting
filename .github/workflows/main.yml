@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Trigger the workflow when changes are pushed to the 'main' branch
+      - main # Trigger the workflow on pushes to the 'main' branch
 
 jobs:
   deploy:
@@ -16,5 +16,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./Shashankrl/For-hosting
+        github_token: ${{ secrets.GITHUB_TOKEN }} # Ensure the token is set correctly
+        publish_branch: gh-pages # The branch to deploy to
+        publish_dir: ./Shashankrl/For-hosting # Directory containing your HTML, CSS, and JS files
